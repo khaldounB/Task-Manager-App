@@ -57,7 +57,7 @@ class PasswordInput extends StatelessWidget {
             fontSize: width(16),
             color: color.kDarkBlackColor,
             fontWeight: FontWeight.w700),
-        cursorColor: color.kDarkOrangColor,
+        cursorColor: color.kLightGray,
         cursorRadius: Radius.circular(10.w),
         maxLines: 1,
         obscureText: show,

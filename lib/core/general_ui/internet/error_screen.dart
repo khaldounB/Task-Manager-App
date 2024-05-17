@@ -32,7 +32,7 @@ class ErrorScreen extends StatelessWidget {
               width: double.infinity,
               height: height(49),
               decoration: BoxDecoration(
-                  color: color.kDarkOrangColor,
+                  color: color.kLightGray,
                   borderRadius: BorderRadius.circular(width(20))
               ),
 
