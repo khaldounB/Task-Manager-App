@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
+import '../../constants/material_design/k_colors.dart';
+import '../../constants/material_design/k_fonts.dart';
 import '../../logic/singleton/statics.dart';
 import '../text/text_network.dart';
 
@@ -32,7 +34,7 @@ class ErrorScreen extends StatelessWidget {
               width: double.infinity,
               height: height(49),
               decoration: BoxDecoration(
-                  color: color.kLightGray,
+                  color: KColors().kLightGray,
                   borderRadius: BorderRadius.circular(width(20))
               ),
 
@@ -42,8 +44,8 @@ class ErrorScreen extends StatelessWidget {
                   TextNetwork(
 
                     text: "اعادة المحاولة",
-                    color: color.kScaffoldColor,
-                    fontFamily: fonts.kBold,
+                    color: KColors().kScaffoldColor,
+                    fontFamily: KFonts().kBold,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   )

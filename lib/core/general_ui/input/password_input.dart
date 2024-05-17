@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 // Project imports:
+import '../../constants/material_design/k_colors.dart';
+import '../../constants/material_design/k_fonts.dart';
 import '../../logic/singleton/statics.dart';
 
 class PasswordInput extends StatelessWidget {
@@ -43,7 +45,7 @@ class PasswordInput extends StatelessWidget {
           borderRadius: BorderRadius.circular(width(10)),
           border: Border.all(
               width: width(1),
-              color: error ? color.kDarkRedColor : Colors.transparent)),
+              color: error ? KColors().kDarkRedColor : Colors.transparent)),
       child: TextFormField(
         onTap: () {},
         onChanged: (value){
@@ -53,11 +55,11 @@ class PasswordInput extends StatelessWidget {
         keyboardType: textInputType,
         textAlign: TextAlign.start,
         style: TextStyle(
-            fontFamily: fonts.kMedium,
+            fontFamily: KFonts().kMedium,
             fontSize: width(16),
-            color: color.kDarkBlackColor,
+            color: KColors().kDarkBlackColor,
             fontWeight: FontWeight.w700),
-        cursorColor: color.kLightGray,
+        cursorColor: KColors().kLightGray,
         cursorRadius: Radius.circular(10.w),
         maxLines: 1,
         obscureText: show,
@@ -78,11 +80,11 @@ class PasswordInput extends StatelessWidget {
               child: show
                   ? Icon(
                       Icons.visibility_off_outlined,
-                      color: color.kDarkGray,
+                      color: KColors().kDarkGray,
                     )
                   : Icon(
                       Icons.visibility_outlined,
-                      color: color.kDarkGray,
+                      color: KColors().kDarkGray,
                     ),
             ),
           ),
@@ -110,8 +112,8 @@ class PasswordInput extends StatelessWidget {
           hintText: hint,
           hintStyle: TextStyle(
               fontSize: width(16),
-              fontFamily: fonts.kMedium,
-              color: color.kLightGray,
+              fontFamily: KFonts().kMedium,
+              color: KColors().kLightGray,
               fontWeight: FontWeight.w400),
         ),
       ),

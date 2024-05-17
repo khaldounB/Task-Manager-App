@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 // Project imports:
+import '../../constants/material_design/k_colors.dart';
 import '../../logic/singleton/statics.dart';
 
 class CachedImage extends StatelessWidget {
@@ -63,7 +64,7 @@ class CachedImage extends StatelessWidget {
         decoration: isCircle
             ? BoxDecoration(
                 shape: BoxShape.circle,
-          border: Border.all(color:fromOrder ?  color.kScaffoldColor:Colors.transparent,width: width(1)),
+          border: Border.all(color:fromOrder ?  KColors().kScaffoldColor:Colors.transparent,width: width(1)),
                 image: DecorationImage(
                   image: imageProvider,
                   fit: boxFit,

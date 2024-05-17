@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
+import '../../constants/material_design/k_colors.dart';
 import '../../logic/singleton/statics.dart';
 
 class LoadingLine extends StatefulWidget {
@@ -42,7 +43,7 @@ class _LoadingLineState extends State<LoadingLine>
             width: width(widget.w),
             height: height(widget.h),
             decoration: BoxDecoration(
-              color: color.kLightGray.withOpacity(0.2),
+              color: KColors().kLightGray.withOpacity(0.2),
               borderRadius: BorderRadius.circular(width(5)),
             ),
             alignment: Alignment.centerRight,

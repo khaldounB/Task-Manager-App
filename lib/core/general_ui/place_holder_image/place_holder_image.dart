@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
+import '../../constants/material_design/k_colors.dart';
 import '../../logic/singleton/statics.dart';
 import '../loading_animation_widget/src/build_loading_animation.dart';
 
@@ -20,7 +21,7 @@ class PlaceHolderImage extends StatelessWidget {
       width: width(w),
       height: height(h),
       child: LoadingAnimationWidget.staggeredDotsWave(
-        color: color.kLightGray.withOpacity(0.7),
+        color: KColors().kLightGray.withOpacity(0.7),
         size: size,
       ),
     );
