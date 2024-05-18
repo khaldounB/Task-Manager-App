@@ -10,13 +10,20 @@ import 'package:path_provider/path_provider.dart';
 
 // Project imports:
 import '../../constants/server/caching_services.dart';
+import '../../services/snack/snack.dart';
 
 final GetIt getIt = GetIt.instance;
 
-Future<void> singletone()async{
-  Directory dir = await getApplicationDocumentsDirectory();
+Future<void> singleton() async {
+  late dynamic dir;
+  if (Platform.isAndroid || Platform.isIOS) {
+    dir = await getApplicationDocumentsDirectory();
+  } else {
+    dir = 'assets/path';
+  }
   Hive.init(dir.path);
   await Hive.openBox<dynamic>('myBox');
   final box = Hive.box('myBox');
   getIt.registerLazySingleton(() => CachingServices(box));
+  getIt.registerLazySingleton(() => Snack());
 }

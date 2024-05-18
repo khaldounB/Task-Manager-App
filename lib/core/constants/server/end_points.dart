@@ -11,12 +11,12 @@ class EndPoints {
 
   /// Authentication
 
-  String login = '${api}auth/login';
-  String me = '${api}auth/me';
-  String refreshToken = '${api}auth/refresh';
+  static const String login = '${api}auth/login';
+  static const String me = '${api}auth/me';
+  static const String refreshToken = '${api}auth/refresh';
 
   /// To-DO
-  String getAllToDo = '${api}todos/user/{id}?limit={limit}&skip={skip}';
-  String toDo = '${api}todos/{id}';
-  String addToDo = '${api}todos/add';
+  static const String getAllToDo = '${api}todos/user/{id}?limit={limit}&skip={skip}';
+  static const String toDo = '${api}todos/{id}';
+  static const String addToDo = '${api}todos/add';
 }

@@ -10,10 +10,9 @@ import 'package:flutter/foundation.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 
-
 // Project imports:
-import '../singleton/statics.dart';
 import '../../constants/material_design/k_keys.dart';
+import '../singleton/statics.dart';
 
 class ApplicationInterceptor extends InterceptorsWrapper {
 
