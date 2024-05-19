@@ -1,5 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Project imports:
 import '../../../features/authentication/providers/login_provider.dart';
 import '../../logic/singleton/statics.dart';
 

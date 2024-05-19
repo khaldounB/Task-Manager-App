@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:provider/provider.dart';
-import 'package:taskmanager/core/general_ui/input/password_input.dart';
-import 'package:taskmanager/core/general_ui/input/text_input.dart';
-import 'package:taskmanager/core/logic/singleton/statics.dart';
-import 'package:taskmanager/core/services/login_services/login_services.dart';
-import 'package:taskmanager/features/authentication/data/requests/login_request.dart';
 
 // Project imports:
 import '../../../../core/constants/material_design/k_colors.dart';
 import '../../../../core/constants/material_design/k_fonts.dart';
+import '../../../../core/general_ui/input/password_input.dart';
+import '../../../../core/general_ui/input/text_input.dart';
 import '../../../../core/general_ui/progress_animated/progress_animated_widget.dart';
 import '../../../../core/general_ui/text/text_network.dart';
+import '../../../../core/logic/singleton/statics.dart';
+import '../../../../core/services/login_services/login_services.dart';
+import '../../data/requests/login_request.dart';
 import '../../providers/login_provider.dart';
 
 class LoginScreen extends StatelessWidget {
