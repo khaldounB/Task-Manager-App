@@ -5,10 +5,10 @@ part 'address_model.g.dart';
 
 @JsonSerializable()
 class AddressModel{
-  String address;
-  String city;
-  String postalCode;
-  String state;
+  String? address;
+  String? city;
+  String? postalCode;
+  String? state;
   CoordinatesModel coordinates;
 
   AddressModel(

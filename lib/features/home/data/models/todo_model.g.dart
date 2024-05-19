@@ -7,9 +7,9 @@ part of 'todo_model.dart';
 // **************************************************************************
 
 ToDoModel _$ToDoModelFromJson(Map<String, dynamic> json) => ToDoModel(
-      (json['id'] as num).toInt(),
-      json['todo'] as String,
-      json['completed'] as bool,
+      (json['id'] as num?)?.toInt(),
+      json['todo'] as String?,
+      json['completed'] as bool?,
       deletedOn: json['deletedOn'] == null
           ? null
           : DateTime.parse(json['deletedOn'] as String),

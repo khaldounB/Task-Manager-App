@@ -7,11 +7,11 @@ part of 'todos_model.dart';
 // **************************************************************************
 
 ToDosModel _$ToDosModelFromJson(Map<String, dynamic> json) => ToDosModel(
-      (json['todos'] as List<dynamic>)
-          .map((e) => ToDoModel.fromJson(e as Map<String, dynamic>))
+      (json['todos'] as List<dynamic>?)
+          ?.map((e) => ToDoModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      (json['total'] as num).toInt(),
-      (json['limit'] as num).toInt(),
+      (json['total'] as num?)?.toInt(),
+      (json['limit'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$ToDosModelToJson(ToDosModel instance) =>

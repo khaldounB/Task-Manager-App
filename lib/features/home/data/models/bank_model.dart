@@ -5,11 +5,11 @@ part 'bank_model.g.dart';
 
 @JsonSerializable()
 class BankModel{
-  String cardExpire;
-  String cardNumber;
-  String cardType;
-  String currency;
-  String iban;
+  String? cardExpire;
+  String? cardNumber;
+  String? cardType;
+  String? currency;
+  String? iban;
 
   BankModel(this.cardExpire, this.cardNumber, this.cardType, this.currency,
       this.iban);

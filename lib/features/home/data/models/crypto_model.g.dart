@@ -7,9 +7,9 @@ part of 'crypto_model.dart';
 // **************************************************************************
 
 CryptoModel _$CryptoModelFromJson(Map<String, dynamic> json) => CryptoModel(
-      json['coin'] as String,
-      json['wallet'] as String,
-      json['network'] as String,
+      json['coin'] as String?,
+      json['wallet'] as String?,
+      json['network'] as String?,
     );
 
 Map<String, dynamic> _$CryptoModelToJson(CryptoModel instance) =>

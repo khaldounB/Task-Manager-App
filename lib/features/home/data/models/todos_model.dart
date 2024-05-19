@@ -8,9 +8,9 @@ part 'todos_model.g.dart';
 
 @JsonSerializable()
 class ToDosModel{
-  List<ToDoModel> todos;
-  int total;
-  int limit;
+  List<ToDoModel>? todos;
+  int? total;
+  int? limit;
 
   ToDosModel(this.todos, this.total, this.limit);
 

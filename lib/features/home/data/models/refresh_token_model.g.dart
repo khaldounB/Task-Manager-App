@@ -8,7 +8,7 @@ part of 'refresh_token_model.dart';
 
 RefreshTokenModel _$RefreshTokenModelFromJson(Map<String, dynamic> json) =>
     RefreshTokenModel(
-      json['token'] as String,
+      json['token'] as String?,
     );
 
 Map<String, dynamic> _$RefreshTokenModelToJson(RefreshTokenModel instance) =>

@@ -8,10 +8,10 @@ part 'company_model.g.dart';
 
 @JsonSerializable()
 class CompanyModel{
-  String department;
-  String name;
-  String title;
-  AddressModel address;
+  String? department;
+  String? name;
+  String? title;
+  AddressModel? address;
 
   CompanyModel(this.department, this.name, this.title, this.address);
 

@@ -5,7 +5,7 @@ part 'refresh_token_model.g.dart';
 
 @JsonSerializable()
 class RefreshTokenModel{
-  String token;
+  String? token;
 
   RefreshTokenModel(this.token);
 

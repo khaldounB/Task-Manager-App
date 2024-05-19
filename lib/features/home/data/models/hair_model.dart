@@ -5,8 +5,8 @@ part 'hair_model.g.dart';
 
 @JsonSerializable()
 class HairModel{
-  String color;
-  String type;
+  String? color;
+  String? type;
 
   HairModel(this.color, this.type);
 

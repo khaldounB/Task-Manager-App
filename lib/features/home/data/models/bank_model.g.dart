@@ -7,11 +7,11 @@ part of 'bank_model.dart';
 // **************************************************************************
 
 BankModel _$BankModelFromJson(Map<String, dynamic> json) => BankModel(
-      json['cardExpire'] as String,
-      json['cardNumber'] as String,
-      json['cardType'] as String,
-      json['currency'] as String,
-      json['iban'] as String,
+      json['cardExpire'] as String?,
+      json['cardNumber'] as String?,
+      json['cardType'] as String?,
+      json['currency'] as String?,
+      json['iban'] as String?,
     );
 
 Map<String, dynamic> _$BankModelToJson(BankModel instance) => <String, dynamic>{

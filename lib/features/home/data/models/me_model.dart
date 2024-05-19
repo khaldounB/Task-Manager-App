@@ -12,34 +12,34 @@ part 'me_model.g.dart';
 
 @JsonSerializable()
 class MeModel {
-  int id;
-  String username;
-  String email;
-  String firstName;
-  String lastName;
-  String maidenName;
-  int age;
-  String gender;
-  String image;
-  String phone;
-  String birthDate;
-  String bloodGroup;
-  String eyeColor;
-  String macAddress;
-  String university;
-  String domain;
-  String ip;
-  String ein;
-  String ssn;
-  String userAgent;
-  String password;
-  double height;
-  double weight;
-  HairModel hair;
-  AddressModel address;
-  BankModel bank;
-  CompanyModel company;
-  CryptoModel crypto;
+  int? id;
+  String? username;
+  String? email;
+  String? firstName;
+  String? lastName;
+  String? maidenName;
+  int? age;
+  String? gender;
+  String? image;
+  String? phone;
+  String? birthDate;
+  String? bloodGroup;
+  String? eyeColor;
+  String? macAddress;
+  String? university;
+  String? domain;
+  String? ip;
+  String? ein;
+  String? ssn;
+  String? userAgent;
+  String? password;
+  double? height;
+  double? weight;
+  HairModel? hair;
+  AddressModel? address;
+  BankModel? bank;
+  CompanyModel? company;
+  CryptoModel? crypto;
 
   MeModel(
       this.id,

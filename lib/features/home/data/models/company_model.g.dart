@@ -7,10 +7,12 @@ part of 'company_model.dart';
 // **************************************************************************
 
 CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) => CompanyModel(
-      json['department'] as String,
-      json['name'] as String,
-      json['title'] as String,
-      AddressModel.fromJson(json['address'] as Map<String, dynamic>),
+      json['department'] as String?,
+      json['name'] as String?,
+      json['title'] as String?,
+      json['address'] == null
+          ? null
+          : AddressModel.fromJson(json['address'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CompanyModelToJson(CompanyModel instance) =>

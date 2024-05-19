@@ -5,9 +5,9 @@ part 'todo_model.g.dart';
 
 @JsonSerializable()
 class ToDoModel{
-  int id;
-  String todo;
-  bool completed;
+  int? id;
+  String? todo;
+  bool? completed;
   bool? isDeleted;
   DateTime? deletedOn;
 

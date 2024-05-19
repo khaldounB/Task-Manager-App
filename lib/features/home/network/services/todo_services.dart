@@ -19,7 +19,7 @@ abstract class ToDoServices{
   _ToDoServices;
   
   @GET(EndPoints.getAllToDo)
-  Future<HttpResponse<ToDosModel>> getAllToDos();
+  Future<HttpResponse<ToDosModel>> getAllToDos(@Path('id') int id, @Path('limit') int limit, @Path('skip') int skip);
   
   @POST(EndPoints.addToDo)
   Future<HttpResponse<ToDoModel>> addToDo(@Body() AddToDoRequest request);

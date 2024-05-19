@@ -5,9 +5,9 @@ part 'crypto_model.g.dart';
 
 @JsonSerializable()
 class CryptoModel{
-  String coin;
-  String wallet;
-  String network;
+  String? coin;
+  String? wallet;
+  String? network;
 
   CryptoModel(this.coin, this.wallet, this.network);
 

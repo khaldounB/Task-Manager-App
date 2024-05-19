@@ -51,8 +51,8 @@ class ToDoRepo {
     return tryApiCall();
   }
 
-  Future<HttpResponse<ToDosModel>> getToDos() async =>
-      await retry(() async => await _ToDoServices.getAllToDos());
+  Future<HttpResponse<ToDosModel>> getToDos(int id,int limit,int skip) async =>
+      await retry(() async => await _ToDoServices.getAllToDos(id,limit,skip));
 
   Future<HttpResponse<ToDoModel>> addToDos(AddToDoRequest request) async =>
       await retry(() async => await _ToDoServices.addToDo(request));

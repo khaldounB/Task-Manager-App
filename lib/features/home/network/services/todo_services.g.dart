@@ -21,7 +21,11 @@ class _ToDoServices implements ToDoServices {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<ToDosModel>> getAllToDos() async {
+  Future<HttpResponse<ToDosModel>> getAllToDos(
+    int id,
+    int limit,
+    int skip,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -34,7 +38,7 @@ class _ToDoServices implements ToDoServices {
     )
             .compose(
               _dio.options,
-              'https://dummyjson.com/todos/user/{id}?limit={limit}&skip={skip}',
+              'https://dummyjson.com/todos/user/${id}?limit=${limit}&skip=${skip}',
               queryParameters: queryParameters,
               data: _data,
             )

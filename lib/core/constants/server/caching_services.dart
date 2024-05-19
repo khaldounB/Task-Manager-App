@@ -56,4 +56,10 @@ class CachingServices {
       }
     }
   }
+
+  deleteFromList({required List<String> list}) {
+    for (var key in list) {
+      deleteData(key: key);
+    }
+  }
 }

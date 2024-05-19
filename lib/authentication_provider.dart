@@ -17,7 +17,7 @@ class AuthenticationProvider extends ChangeNotifier {
 
   Future<void> app({required BuildContext context}) async {
     if ((box.getSaveData(key: KKeys().token) ?? "0") != "0") {
-      context.pushReplacement('/login');
+      context.pushReplacement('/home');
     } else {
       context.pushReplacement('/login');
     }
