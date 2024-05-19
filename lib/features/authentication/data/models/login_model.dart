@@ -5,14 +5,14 @@ part 'login_model.g.dart';
 
 @JsonSerializable()
 class LoginModel{
-  int id;
-  String username;
-  String email;
-  String firstName;
-  String lastName;
-  String gender;
-  String image;
-  String token;
+  int? id;
+  String? username;
+  String? email;
+  String? firstName;
+  String? lastName;
+  String? gender;
+  String? image;
+  String? token;
 
   LoginModel(this.id, this.username, this.email, this.firstName, this.lastName,
       this.gender, this.image, this.token);

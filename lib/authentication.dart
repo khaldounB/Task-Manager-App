@@ -20,50 +20,53 @@ class Authentication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Internet(
-      child: ListenableProvider<AuthenticationProvider>(
-        create: (context) => AuthenticationProvider(context: context),
-        child: Consumer<AuthenticationProvider>(
-          builder: (context, provider, child) {
-            return Scaffold(
-              backgroundColor: Colors.white,
-              body: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: height(500),
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/icon.png'))),
+    return ListenableProvider<AuthenticationProvider>(
+      create: (context) => AuthenticationProvider(context: context),
+      child: Consumer<AuthenticationProvider>(
+        builder: (context, provider, child) {
+          return Scaffold(
+            backgroundColor: Colors.white,
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: height(500),
+                  alignment: Alignment.center,
+                  child: TextNetwork(
+                    text: 'Task Manager',
+                    color: KColors().kDarkBlackColor,
+                    fontFamily: KFonts().kBold,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
                   ),
+                ),
 
-                  LoadingLine(
-                    colors: KColors().kLightGray,
+                LoadingLine(
+                  colors: KColors().kLightGray,
+                ),
+                SizedBox(
+                  height: height(120),
+                ),
+                InkWell(
+                  onTap: (){
+                    UrlServices().sendEmail('khaldounbadreahf@gmail.com', '', '');
+                  },
+                  child: TextNetwork(
+                    text: 'khaldounbadreahf@gmail.com',
+                    color: KColors().kLightGray,
+                    fontFamily: KFonts().kMedium,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: height(120),
-                  ),
-                  InkWell(
-                    onTap: (){
-                      UrlServices().sendEmail('khaldounbadreahf@gmail.com', '', '');
-                    },
-                    child: TextNetwork(
-                      text: 'aurora.development.at@gmail.com',
-                      color: KColors().kLightGray,
-                      fontFamily: KFonts().kMedium,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(
-                    height: height(20),
-                  ),
-                ],
-              ),
-            );
-          },
-        ),
+                ),
+                SizedBox(
+                  height: height(20),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

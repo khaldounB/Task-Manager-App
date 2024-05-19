@@ -1,4 +1,6 @@
 // Flutter imports:
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -17,17 +19,18 @@ class LoginProvider extends ChangeNotifier{
   AuthenticationRepo _repo = AuthenticationRepo();
 
   Future<void> login(LoginRequest request,BuildContext context)async{
+    load = true;
     await _repo.login(request).then((value){
       if(value.response.statusCode == 200){
         Map<String,dynamic> data = {
-          KKeys().id : value.data.id,
-          KKeys().email : value.data.email,
-          KKeys().token : value.data.token,
-          KKeys().firstName : value.data.firstName,
-          KKeys().gender : value.data.gender,
-          KKeys().image : value.data.image,
-          KKeys().lastName : value.data.lastName,
-          KKeys().username : value.data.username,
+          KKeys().id : value.data!.id,
+          KKeys().email : value.data!.email,
+          KKeys().token : value.data!.token,
+          KKeys().firstName : value.data!.firstName,
+          KKeys().gender : value.data!.gender,
+          KKeys().image : value.data!.image,
+          KKeys().lastName : value.data!.lastName,
+          KKeys().username : value.data!.username,
         };
         box.saveFromMap(map: data);
         context.pushReplacement('/home');
@@ -36,6 +39,42 @@ class LoginProvider extends ChangeNotifier{
       }else{
         snack.showErrorSnack(context: context, message: 'Something Wrong, Please Try Later');
       }
+      load = false;
     });
+  }
+
+  bool _usernameError = false;
+  bool _passwordError = false;
+
+  bool get passwordError => _passwordError;
+
+  set passwordError(bool value) {
+    _passwordError = value;
+    notifyListeners();
+  }
+
+  bool get usernameError => _usernameError;
+
+  set usernameError(bool value) {
+    _usernameError = value;
+    notifyListeners();
+  }
+
+  bool _passwordHidden = false;
+
+  bool get passwordHidden => _passwordHidden;
+
+  set passwordHidden(bool value) {
+    _passwordHidden = value;
+    notifyListeners();
+  }
+
+  bool _load = false;
+
+  bool get load => _load;
+
+  set load(bool value) {
+    _load = value;
+    notifyListeners();
   }
 }

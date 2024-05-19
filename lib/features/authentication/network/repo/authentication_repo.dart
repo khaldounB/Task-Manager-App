@@ -24,34 +24,9 @@ class AuthenticationRepo {
   static final AuthenticationServices _authenticationServices =
       AuthenticationServices(_dio, baseUrl: EndPoints.api);
 
-  Future<T> retry<T>(
-    Future<T> Function() apiCall, {
-    int maxRetries = 3,
-    Duration delay = const Duration(seconds: 0),
-  }) async {
-    int retryCount = 0;
 
-    Future<T> tryApiCall() async {
-      try {
-        return await apiCall();
-      } catch (error) {
-        debugPrint('Error Handling: $error');
 
-        if (retryCount < maxRetries) {
-          await Future.delayed(delay);
-          retryCount++;
-          return tryApiCall();
-        } else {
-          rethrow;
-        }
-      }
-    }
-
-    return tryApiCall();
-  }
-
-  Future<HttpResponse<LoginModel>> login(LoginRequest request) async {
-    return await retry(
-        () async => await _authenticationServices.login(request));
+  Future<HttpResponse<LoginModel?>> login(LoginRequest request) async {
+    return await _authenticationServices.login(request);
   }
 }

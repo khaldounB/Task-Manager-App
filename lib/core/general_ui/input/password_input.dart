@@ -10,18 +10,17 @@ import '../../constants/material_design/k_fonts.dart';
 import '../../logic/singleton/statics.dart';
 
 class PasswordInput extends StatelessWidget {
-  const PasswordInput({
-    super.key,
-    required this.hint,
-    required this.heighte,
-    required this.widthe,
-    required this.controller,
-    required this.textInputType,
-    this.colors = const Color(0xffF5F5F8),
-    required this.error,
-    required this.show,
-    required this.provider
-  });
+  const PasswordInput(
+      {super.key,
+      required this.hint,
+      required this.heighte,
+      required this.widthe,
+      required this.controller,
+      required this.textInputType,
+      this.colors = const Color(0xffF5F5F8),
+      required this.error,
+      required this.show,
+      required this.provider});
 
   final String hint;
   final double heighte;
@@ -48,7 +47,7 @@ class PasswordInput extends StatelessWidget {
               color: error ? KColors().kDarkRedColor : Colors.transparent)),
       child: TextFormField(
         onTap: () {},
-        onChanged: (value){
+        onChanged: (value) {
           provider.notifyListeners();
         },
         controller: controller,
@@ -57,7 +56,7 @@ class PasswordInput extends StatelessWidget {
         style: TextStyle(
             fontFamily: KFonts().kMedium,
             fontSize: width(16),
-            color: KColors().kDarkBlackColor,
+            color: Colors.black,
             fontWeight: FontWeight.w700),
         cursorColor: KColors().kLightGray,
         cursorRadius: Radius.circular(10.w),
@@ -69,13 +68,7 @@ class PasswordInput extends StatelessWidget {
             padding: EdgeInsets.only(top: height(5)),
             child: GestureDetector(
               onTap: () {
-                if (hint == 'كلمة السر') {
-                  provider.passwordHidden =
-                      !provider.passwordHidden;
-                } else {
-                  provider.repeatPasswordHidden =
-                      !provider.repeatPasswordHidden;
-                }
+                provider.passwordHidden = !provider.passwordHidden;
               },
               child: show
                   ? Icon(
@@ -113,7 +106,7 @@ class PasswordInput extends StatelessWidget {
           hintStyle: TextStyle(
               fontSize: width(16),
               fontFamily: KFonts().kMedium,
-              color: KColors().kLightGray,
+              color: Colors.black,
               fontWeight: FontWeight.w400),
         ),
       ),

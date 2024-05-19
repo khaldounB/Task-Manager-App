@@ -44,7 +44,18 @@ class ApplicationInterceptor extends InterceptorsWrapper {
     },
     onResponse: (response, handler) {
 
-      return handler.next(response);
+      if (response.statusCode != 200) {
+        // Handle the error as needed
+        handler.reject(DioError(
+          requestOptions: response.requestOptions,
+          response: Response(requestOptions: response.requestOptions),
+          error: 'Status code is not 200',
+
+        ));
+      } else {
+        // Continue with the response
+        handler.next(response);
+      }
     },
     onError: (error, handler) {
 

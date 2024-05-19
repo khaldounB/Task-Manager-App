@@ -54,7 +54,7 @@ class TextInput extends StatelessWidget {
         style: TextStyle(
             fontFamily: KFonts().kMedium,
             fontSize: width(16),
-            color: KColors().kDarkBlackColor,
+            color: Colors.black,
             fontWeight: FontWeight.w700),
         cursorColor: KColors().kLightGray,
         cursorRadius: Radius.circular(10.w),
@@ -85,7 +85,7 @@ class TextInput extends StatelessWidget {
           hintStyle: TextStyle(
               fontSize: width(16),
               fontFamily: KFonts().kMedium,
-              color: KColors().kLightGray,
+              color: Colors.black,
               fontWeight: FontWeight.w400),
         ),
       ),

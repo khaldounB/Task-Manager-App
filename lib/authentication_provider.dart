@@ -10,12 +10,14 @@ import 'core/logic/singleton/statics.dart';
 
 class AuthenticationProvider extends ChangeNotifier {
   AuthenticationProvider({required BuildContext context}) {
-    app(context: context);
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await app(context: context);
+    });
   }
 
   Future<void> app({required BuildContext context}) async {
     if ((box.getSaveData(key: KKeys().token) ?? "0") != "0") {
-      context.pushReplacement('/home');
+      context.pushReplacement('/login');
     } else {
       context.pushReplacement('/login');
     }
